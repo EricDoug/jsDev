@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Literal Object</title>
+    <script type = "text/javascript">
+        var soldier = {
+            name : undefined,
+            rank : "captain",
+            picture : "../source/spark_logo.png",
+            fallIn : function(){
+              alert("At attention,arms at the side,head and eyes forward.");
+            },
+            fallOut : function(){
+                alert("Drop out of formation,step back,about face!");
+            }
+        };
+    </script>
+</head>
+<body>
+<big>
+    <script type = "text/javascript">
+        soldier.name="Eric";
+        document.write("<img src='"+soldier.picture+"'> <br />");
+        document.write("The soldier's name is "+soldier.name+"<br />");
+        document.write(soldier.name + "'s rank is "+soldier.rank +".<br/>");
+        soldier.fallIn();
+        soldier.fallOut();
+    </script>
+</big>
+
+</body>
+</html>

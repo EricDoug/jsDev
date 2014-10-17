@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Array Test</title>
+    <h1>An Array of Books</h1>
+    <script type="text/javascript">
+        var book = new Array(6);
+        book[0] = "War and Peace";
+        book[1] = "Huckleberry Finn";
+        book[2] = "The Return of the Native";
+        book[3] = "A Christmas Carol";
+        book[4] = "The Yearling";
+        book[5] = "Exodus";
+
+        var pet = ["cat","dog","snake"];
+        var colors = new Array("red","green","blue","purple");
+
+        //关联数组
+        var states = new Array();
+        states["CA"] = "California";
+        states["ME"] = "Maine";
+        states["MT"] = "Montana";
+        //多维数组
+        var grades = [ [77,88,99,75],
+                       [50,60,99,89],
+                       [99,88,78,92]
+        ];
+
+    </script>
+</head>
+<body bgcolor="#e6e6fa">
+<big>
+    <script>
+        for(var i in book){
+            document.write("book["+i+"] ="+' \"'+book[i]+'\" '+"<br />");
+        }
+        document.write("<h1>An Array of Pets</h1>");
+        for(var i in pet){
+            document.write("pet["+i+"] ="+' \"'+pet[i]+'\" '+"<br />");
+        }
+        document.write("<h1>An Array of Colored Strings</h1>");
+        for(var i in colors){
+            document.write("<font color='"+colors[i]+"'>");
+            document.write("colors["+i+"] = "+colors[i]+ "<br />");
+        }
+//        document.write("<h1>An Array of Connective Array</h1>");
+//        for(var i in states){
+//            document.write("The index is:<em> " + i);
+//            document.write(".</em>The value is: <em>" + states[i] + ".</em> <br />");
+//        }
+        document.write("<h1>An Array of Multi-Array</h1>");
+        for(var m = 0;m < grades.length;m++){
+            document.write("<tr>");
+            for(var a = 0; a < grades[m].length;a++){
+                document.write("<td>"+grades[m][a]+"</td>");
+            }
+            document.write("</tr>");
+        }
+    </script>
+</big>
+
+</body>
+</html>

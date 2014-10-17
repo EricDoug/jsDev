@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>BOM</B></title>
+    <script type = "text/javascript">
+        //navigator
+        function navofBrower() {
+            var BrowseName = navigator.appName;
+            var BrowseVersion = navigator.appVersion;
+            var BrowseAgent = navigator.userAgent;
+            var platform = navigator.platform;
+            this.show = function(){
+                document.write("<b>The Browser's name is:</b> "+ BrowseName +"<br />"+
+                               "<b>The Browser's Version is: </b>" + BrowseVersion + "<br/>"+
+                                "<b>The Browser's User Agent is: </b>" + BrowseAgent+ "<br/>"+
+                                "<b>The Browser's platform is: </b>" + platform+ "<br/>"
+                );
+            }
+        }
+
+    </script>
+</head>
+<body>
+<script type = "text/javascript">
+//    for(var property in navigator){
+//        str = "navigator"+"."+ property;
+//        document.write(property + "&nbsp;&nbsp;<em>"+str + "</em> <br />")
+//    }
+    var nav = new navofBrower();
+    nav.show();
+</script>
+</body>
+</html>

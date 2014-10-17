@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>With Test</title>
+    <script type="text/javascript">
+        function Book(title,author,publisher){
+            this.pagenumber=0;
+
+            this.title = title;
+            this.author = author;
+            this.publisher = publisher;
+
+            this.uppage = function () {return ++this.pagenumber;};
+
+            this.backpage = function () {return --this.pagenumber;};
+
+            this.show = function () {
+                with (this) {
+                    var info = "The title is " + title;
+                    info += "\nThe author is " + author;
+                    info += "\nThe publisher is " + publisher;
+                    alert(info);
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<script type = "text/javascript">
+    var myBook = new Book("JavaScript by Example","Ellie","Prentice Hall");
+    myBook.pagenumber=5;
+    myBook.show();
+    document.write("<br>Page forward: ");
+    for(i=0;i<3;i++){
+        document.write("<br />" + myBook.uppage());  //向前翻页
+    }
+    document.write("<br>Page backward: ");
+    for(;i>0;i--){
+        document.write("<br />" + myBook.backpage());  //向后翻页
+    }
+</script>
+
+</body>
+</html>

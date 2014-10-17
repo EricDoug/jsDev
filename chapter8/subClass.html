@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Creating a subclass</title>
+    <script type = "text/javascript">
+        function Pet(){
+            var owner = "Mrs.Jones";
+            var gender = undefined;
+            this.setOwner = function(who){ owner=who;};
+            this.getOwner = function(){
+                return owner;
+            };
+            this.setGender = function(sex) { gender=sex;};
+            this.getGender = function(){return gender;};
+        }
+        function Cat(){} //子类构造函数
+        Cat.prototype = new Pet();
+        Cat.prototype.constructor=Cat;
+        Cat.prototype.speak = function speak(){
+          return("Meow");
+        };
+        function Dog(){};
+        Dog.prototype = new Pet();
+        Dog.prototype.constructor=Dog;
+        Dog.prototype.speak = function speak() {
+            return("Woof");
+        };
+    </script>
+</head>
+<body>
+<big>
+    <script type = "text/javascript">
+        var cat = new Cat;
+        var dog = new Dog;
+        cat.setOwner("Eric");
+        cat.setGender("Female");
+        dog.setGender("Male");
+        document.write("The cat is a "+cat.getGender()+" owned by "+cat.getOwner()+" and it says "+cat.speak()+"<br />");
+        document.write("The dog is a "+dog.getGender()+" owned by "+dog.getOwner()+" and it says "+dog.speak());
+    </script>
+</big>
+</body>
+</html>

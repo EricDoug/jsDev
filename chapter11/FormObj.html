@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Naming Forms Objects</title>
+</head>
+<body>
+<form name="form1" id="first_form">
+    Enter your name:
+    <input type="text" id="namefield" value="Name: "/>
+</form>
+<form name="form2" id="second_form" action="thanks2.html" method="GET">
+    <input  type="submit" value="Press here" />
+</form>
+<big>
+    <script type="text/javascript">
+        document.write("The first form is named: " + window.document.forms["form1"].name);
+        document.write(".<br />The second form is named: " + window.document.forms["form2"].name);
+        document.write(".<br />Also can be referenced as: <em>"+document["form2"].name+"</em>");
+        document.write(".<br />Also can be referenced as: <em>"+document.form2.name+".</em><br />");
+
+        document.write("Using the id attribute to get the form name,<br />");
+        var f1 = document.getElementById("first_form");
+        var f2 = document.getElementById("second_form");
+        document.write("The first form is named " + f1.name + ".<br />");
+    </script>
+</big>
+</body>
+</html>

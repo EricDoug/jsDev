@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Class Test</title>
+    <script type="text/javascript">
+        function Book(title,author,publisher){
+            this.pagenumber=0;
+
+            this.title = title;
+            this.author = author;
+            this.publisher = publisher;
+
+            this.uppage = pageForward;
+            this.backpage = pageBackward;
+        }
+        function pageForward(){
+            this.pagenumber++;
+            return this.pagenumber;
+        }
+        function pageBackward(){
+            this.pagenumber--;
+            return this.pagenumber;
+        }
+    </script>
+</head>
+<body>
+<script type = "text/javascript">
+    var myBook = new Book("JavaScript by Example","Ellie","Prentice Hall");
+    myBook.pagenumber=5;
+    document.write("<b>" + myBook.title +
+                   "<br>" + myBook.author +
+                    "<br>" + myBook.ppublisher +
+                    "<br>" + myBook.publisher +
+                    "<br>Current page is " + myBook.pagenumber );
+    document.write("<br>Page forward: ");
+    for(i=0;i<3;i++){
+        document.write("<br />" + myBook.uppage());  //向前翻页
+    }
+    document.write("<br>Page backward: ");
+    for(;i>0;i--){
+        document.write("<br />" + myBook.backpage());  //向后翻页
+    }
+</script>
+
+</body>
+</html>

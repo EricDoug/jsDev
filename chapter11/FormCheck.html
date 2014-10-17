@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Form Checking</title>
+    <script type="text/javascript">
+        //空白字段检查
+        function checkForm(yourinfo){
+            if(yourinfo.namestring.value == "" || yourinfo.namestring.value == null){
+                alert("Please type in your name");
+                return(false);
+            }
+            else{
+                return(true);
+            }
+        }
+        //检查字母字符
+        function validate(form){
+            if(alpha(form.first) == false){
+                alert("First name is invalid");
+                return false;
+            }
+            else if(alpha(form.last) == false ){
+                alert("Last name is invalid");
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        function alpha(textField){
+            if(textField.value.length != 0){
+                for(var i = 0;i < textField.value.length;i++){
+                    var ch = textField.value.charAt(i);
+                    if((ch < "A" || ch > "Z") && (ch < "a" || ch > "z")){
+                        return false;
+                        }
+                    }
+                }
+            else{
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+<b>
+    <form name="info" action="thanks2.html" onsubmit="return checkForm(this);">
+        <big>
+            <p>
+                Type your name here:
+                <input type="text" name="namestring" size="50">
+            </p>
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Clear" />
+        </big>
+    </form>
+    <form name="alphachk" onsubmit="return validate(this);">
+        <p>
+        Enter your first name:
+        <input type="text" name="first" size="60">
+        </p>
+        <input type="submit" value="Check it out">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
